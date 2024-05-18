@@ -1,13 +1,7 @@
 package factories;
 
-import components.abstractproducts.Accelerator;
-import components.abstractproducts.Brake;
-import components.abstractproducts.CCH;
-import components.abstractproducts.Engine;
-import components.products.DigitalCarAccelerator;
-import components.products.DigitalCarBrake;
-import components.products.DigitalCarCCH;
-import components.products.DigitalCarEngine;
+import components.abstractproducts.*;
+import components.products.*;
 
 public class DigitalCarCruiseControlSystemFactory implements CruiseControlSystemFactory {
     public DigitalCarCruiseControlSystemFactory() {
@@ -32,5 +26,10 @@ public class DigitalCarCruiseControlSystemFactory implements CruiseControlSystem
     @Override
     public Engine createEngine() {
         return new DigitalCarEngine();
+    }
+
+    @Override
+    public SpeedSensor createSpeedSensor(){
+        return  new DigitalCarSpeedSensor();
     }
 }

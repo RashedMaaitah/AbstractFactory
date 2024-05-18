@@ -1,13 +1,7 @@
 package factories;
 
-import components.abstractproducts.Accelerator;
-import components.abstractproducts.Brake;
-import components.abstractproducts.CCH;
-import components.abstractproducts.Engine;
-import components.products.SimulationAccelerator;
-import components.products.SimulationBrake;
-import components.products.SimulationCCH;
-import components.products.SimulationEngine;
+import components.abstractproducts.*;
+import components.products.*;
 
 public class SimulationCruiseControlSystemFactory implements CruiseControlSystemFactory {
     public SimulationCruiseControlSystemFactory(){
@@ -32,5 +26,10 @@ public class SimulationCruiseControlSystemFactory implements CruiseControlSystem
     @Override
     public Engine createEngine() {
         return new SimulationEngine();
+    }
+
+    @Override
+    public SpeedSensor createSpeedSensor() {
+        return new SimulationSpeedSensor();
     }
 }
